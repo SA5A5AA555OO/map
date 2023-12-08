@@ -2,6 +2,10 @@ import React from 'react';
 import {Text, View} from 'react-native';
 import Navigation from './src/Components/Navigation';
 
+if (__DEV__) {
+  import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+}
+
 const handleSignUp = async () => {
   try {
     await auth().createUserWithEmailAndPassword(email, password);
